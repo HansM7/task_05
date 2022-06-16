@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('includes/head.ejs') %> 
+<body>
+    <div class="content_principal2">
+        <%- include('includes/cabecera.ejs',{titulo:"Formulario de registro"}) %> 
+        <br>
+        <form action="/producto" method="POST">
+            <div class="mb-3">
+                <label class="form-label">Nombre del producto</label>
+                <input type="text" class="form-control" name="title"  autocomplete="off" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Precio del producto</label>
+                <input type="text" class="form-control" name="price"  autocomplete="off" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">URL del producto</label>
+                <input type="text" class="form-control" name="thumbnail"  autocomplete="off" required>
+            </div>
+            <button type="submit" class="btn btn-success">Agregar producto</button>
+            <a href="/" class="btn btn-danger">Salir</a>
+        </form>
+    </div>
+    
+</body>
+</html>

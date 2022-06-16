@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('includes/head.ejs') %> 
+<body>
+    <div class="content_principal2">
+        <%- include('includes/cabecera.ejs',{titulo: "Listado de productos"}) %> 
+        <br>
+        <% if (products.length<1) { %>
+            No hay productos
+        <% }else{ %> 
+        <table style="width: 100%;" class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        Nombre
+                    </th>
+                    <th>
+                        Precio
+                    </th>
+                    <th>
+                        Imagen
+                    </th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <% for (const i in products) { %>
+                <tr>
+                    <td>
+                        <%= products[i].title %> 
+                    </td>
+                    <td>
+                        <%= products[i].price %> 
+                    </td>
+                    <td>
+                        <img width="100" height="100" src="<%= products[i].thumbnail %> " alt="">
+                    </td>
+                </tr>
+                <% } %> 
+            </tbody>
+        </table>
+        <% } %>
+        <br>
+        <a class="btn btn-danger" href="/">Volver</a>
+    </div>
+    
+</body>
+</html>
